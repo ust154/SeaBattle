@@ -1,7 +1,7 @@
 package com.ustas1987.game1;
 
 public class Field {
-    static final String CELL_FIELD = "* "; // cell value on the field
+    static final String CELL_FIELD = "[ ]"; // cell value on the field
     static final byte SIZE = 10; // field size
     static String[][] field = new String[SIZE][SIZE];
 
