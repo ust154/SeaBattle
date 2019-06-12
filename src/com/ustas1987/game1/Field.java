@@ -12,6 +12,7 @@ public class Field {
                 System.out.print(CELL_FIELD + " ");
             }
             System.out.println(" ");
+
         }
     }
 }

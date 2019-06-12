@@ -1,6 +1,8 @@
 package com.ustas1987.game1;
 
-public class Ships {
+public abstract class Ships {
+
+
 
 
 }
