@@ -1,15 +1,14 @@
 package com.ustas1987.game1;
 
-import java.util.Arrays;
 import java.util.Random;
-import java.util.function.ToDoubleBiFunction;
 
 public class UserShips {
+    static UserShips userShip;
     static int NUMBER_OF_SHIPS = 10;
     static int numberOfDecks;
     static int countOfShips;
-    static int shipPositionX;
-    static int shipPositionY;
+    int shipPositionX;
+    int shipPositionY;
     static boolean isTheShipHorizontal; //ориентация: true - горизонтальная, false - вертикальная
     static char SHIP_ON_THE_FIELD = '\u2B1B';
     static UserShips[] userShips = new UserShips[NUMBER_OF_SHIPS];//the mass of the user ships
@@ -37,32 +36,29 @@ public class UserShips {
             } else if (countOfShips > 6 && countOfShips <= 10) {
                 userShips[i] = new UserShips(1, random.nextInt(10), random.nextInt(10), isTheShipHorizontal);
             }
-            /* TODO
-            * в методе createUserShips попробовать в каждои ифе присваивать созданному кораблю ячейку на поле.
-            * либо рисовать его на поеле после: за рамками ифоф
-            * */
+        }
 
+    }
 
+    public void setUserShips(UserShips userShip) {
+        this.userShip = userShip;
+        if (userShip.isTheShipHorizontal) {
+            for (int i = 0; i < userShips.length; i++) {
+                Field.field[userShip.shipPositionX + i][userShip.shipPositionY] = 'X';
+            }
+        } else {
+            for (int i = 0; i < userShips.length; i++) {
+                Field.field[userShip.shipPositionX][userShip.shipPositionY + i] = 'X';
+            }
         }
         Field.showTheField();
-//        for (int i = 0; i < NUMBER_OF_SHIPS; i++) {
-//            System.out.print(userShips[i].numberOfDecks + " ");
-//        }
-//        System.out.println(" ");
-//        //method to set the ships on the field
-//        public static void autoSetUserShipsOnTheField () {
-//
-//
-//        }
-//
-//        System.out.println(isTheShipHorizontal);
-//        System.out.println(countOfShips);
     }
-//        shipPositionX = random.nextInt(Field.SIZE - (isTheShipHorizontal ? numberOfDecks : 0));
-//        shipPositionY = random.nextInt(Field.SIZE - (isTheShipHorizontal ? 0 : numberOfDecks));
-//        shipPositionX = random.nextInt(Field.SIZE - numberOfDecks + 1);
-//        shipPositionY = random.nextInt(Field.SIZE - numberOfDecks + 1);
 }
+
+
+
+
+
 
 
 

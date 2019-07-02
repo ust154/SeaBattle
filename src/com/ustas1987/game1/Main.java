@@ -7,10 +7,7 @@ public class Main {
         Field.creatTheField();
         Field.showTheField();
 
-    UserShips.createUserShips();
-    //UserShips.autoSetUserShipsOnTheField();
-
+        UserShips.createUserShips();
 
     }
-
 }
